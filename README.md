@@ -13,18 +13,18 @@ Visit our project [page](http://vclab.kaist.ac.kr/siggraphasia2017p1/index.html)
 
 Please cite this paper if you use this code in an academic publication.
 - Bibtex:
-@Article{DeepCASSI:SIGA:2017,
-  author  = {Inchang Choi and Daniel S. Jeon and Giljoo Nam 
-             and Diego Gutierrez and Min H. Kim},
-  title   = {High-Quality Hyperspectral Reconstruction 
-             Using a Spectral Prior},
-  journal = {ACM Transactions on Graphics (Proc. SIGGRAPH Asia 2017)},
-  year    = {2017},
-  volume  = {36},
-  number  = {6},
-  pages   = {218:1-13},
-  doi     = "10.1145/3130800.3130810",
-  url     = "http://dx.doi.org/10.1145/3130800.3130810",
+@Article{DeepCASSI:SIGA:2017,<br>
+  author  = {Inchang Choi and Daniel S. Jeon and Giljoo Nam <br>
+             and Diego Gutierrez and Min H. Kim},<br>
+  title   = {High-Quality Hyperspectral Reconstruction <br>
+             Using a Spectral Prior},<br>
+  journal = {ACM Transactions on Graphics (Proc. SIGGRAPH Asia 2017)},<br>
+  year    = {2017},<br>
+  volume  = {36},<br>
+  number  = {6},<br>
+  pages   = {218:1-13},<br>
+  doi     = "10.1145/3130800.3130810",<br>
+  url     = "http://dx.doi.org/10.1145/3130800.3130810",<br>
   }
 
 ## License Information
