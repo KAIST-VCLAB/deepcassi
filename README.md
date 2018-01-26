@@ -23,7 +23,3 @@ In the definition of each demo function, you are allowed to change parameter val
 ## Contacts
 For questions, please send an email to **[inchangchoi](http://inchangchoi.info)@vclab.kaist.ac.kr**
 
-## Acknowldegments
-[Min H. Kim](http://vclab.kaist.ac.kr/minhkim/index.html) acknowledges Korea NRF grants (2016R1A2B2013031, 2013M3A6A6073718) and additional support by Korea Creative Content Agency (KOCCA) in Ministry of Culture, Cross-Ministry Giga KOREA Project (GK17P0200), Sports and Tourism (MCST), Samsung Electronics (SRFC-IT1402-02), and an ICT R&D program of MSIT/IITP of Korea (R7116-16-1035). 
-
-[Diego Gutierrez](http://giga.cps.unizar.es/~diegog/) acknowledges funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (CHAMELEON project, grant agreement No 682080), and from the Spanish Ministerio de Economía y Competitividad (project TIN2016-78753-P).
