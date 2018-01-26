@@ -9,7 +9,7 @@
 For information please see the paper:
  - High-Quality Hyperspectral Reconstruction Using a Spectral Prior
    [**ACM SIGGRAPH ASIA 2017**](https://sa2017.siggraph.org/), Inchang Choi, Daniel S. Jeon, Giljoo Nam, Diego Gutierrez, Min H. Kim
-Visit our project [page](http://vclab.kaist.ac.kr/siggraphasia2017p1/index.html) for the hyperspectral image dataset.
+Visit our project [http://vclab.kaist.ac.kr/siggraphasia2017p1/](http://vclab.kaist.ac.kr/siggraphasia2017p1/) for the hyperspectral image dataset.
 
 Please cite this paper if you use this code in an academic publication.
 - Bibtex:
