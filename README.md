@@ -18,7 +18,7 @@ We have written a demo code in **demo_HQHS_recon.py**. In the main function of i
 
 In the definition of each demo function, you are allowed to change parameter values, such as rho, sparsity, alpha-fidelity, learning-rate, the number of iterations, and input/output filenames. You can change the modulation matrix, **Phi**, in **modulation.py**.
 
-#### Note: **demo_AE_inference.py** shows how to feed and reconstruct inputs to our autoencoder to generate the corresponding outputs.
+#### Note: 'demo_AE_inference.py' shows how to feed and reconstruct inputs to our autoencoder to generate the corresponding outputs.
 
 ## Contacts
 For questions, please send an email to **[inchangchoi](http://inchangchoi.info)@vclab.kaist.ac.kr**
