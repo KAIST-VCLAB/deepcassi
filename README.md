@@ -1,5 +1,5 @@
 # High-Quality Hyperspectral Reconstruction<br>Using a Spectral Prior
-![alt text](./paper-teaser.png "Paper Teasear")
+![teaser](./paper-teaser.png "Paper Teasear")
 
 ## General Information
 - Codename: DeepCASSI (ACM SIGGRAPH Asia 2017)
