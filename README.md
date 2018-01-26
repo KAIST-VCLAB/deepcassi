@@ -16,7 +16,7 @@ We have written a demo code in `demo_HQHS_recon.py`. In the main function of it,
 * **demo_recon_synthetic_CAVE()** : this function demonstrates our reconstruction for [**CAVE**](http://www.cs.columbia.edu/CAVE/databases/multispectral/) dataset
 * **demo_recon_synthetic_KAIST()**: this function demonstrates our reconstruction for our [**KAIST**](http://vclab.kaist.ac.kr/siggraphasia2017p1/index.html) dataset
 
-In the definition of each demo function, you are allowed to change parameter values, such as rho, sparsity, alpha-fidelity, learning-rate, the number of iterations, and input/output filenames. You can change the modulation matrix, **Phi**, in **modulation.py**.
+In the definition of each demo function, you are allowed to change parameter values, such as rho, sparsity, alpha-fidelity, learning-rate, the number of iterations, and input/output filenames. You can change the modulation matrix, **Phi**, in `modulation.py`.
 
 #### Note: `demo_AE_inference.py` shows how to feed and reconstruct inputs to our autoencoder to generate the corresponding outputs.
 
