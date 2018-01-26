@@ -1,0 +1,16 @@
+
+
+import tensorflow as tf
+
+
+
+FILENAME_DEFAULT_MODEL = 'models/model_64x11/model.ckpt-19199'
+
+
+VALID_SPECTRAL_CHS = range(0,31)
+N_VALID_SPECTRALS = len(VALID_SPECTRAL_CHS)
+TF_DATA_TYPE = tf.float32
+TF_CONV_KERNEL_SIZE = 3
+TF_WEIGHT_DECAY_LAMBDA = 1e-08
+
+
