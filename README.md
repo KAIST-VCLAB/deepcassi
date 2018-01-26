@@ -1,5 +1,6 @@
 # High-Quality Hyperspectral Reconstruction<br>Using a Spectral Prior
-This work was presented at Bangkok in **SIGGRAPH ASIA 2017**. Visit our project [page](http://vclab.kaist.ac.kr/siggraphasia2017p1/index.html).
+![alt text](./paper-teaser.png "Paper Teasear")
+This work was presented at Bangkok in [**SIGGRAPH ASIA 2017**](https://sa2017.siggraph.org/). Visit our project [page](http://vclab.kaist.ac.kr/siggraphasia2017p1/index.html).
 
 ## Requirements
 We developed the code on **Ubuntu 14.04**, but we believe that our code will run on other versions of Ubuntu, Windows, and OSX as well. When using different versions of Python and Tensorflow, minor modifications, such as function names, in the code will be necessary.
