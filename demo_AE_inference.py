@@ -1,6 +1,5 @@
 
-
-
+# This file is used for evaluating how the input can be well reconstructed as the output.
 import numpy as np
 import cv2
 import scipy.io as sio
