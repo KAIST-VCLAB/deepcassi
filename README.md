@@ -11,7 +11,7 @@ For information please see the paper:
    [**ACM SIGGRAPH ASIA 2017**](https://sa2017.siggraph.org/), Inchang Choi, Daniel S. Jeon, Giljoo Nam, Diego Gutierrez, Min H. Kim
 Visit our project [http://vclab.kaist.ac.kr/siggraphasia2017p1/](http://vclab.kaist.ac.kr/siggraphasia2017p1/) for the hyperspectral image dataset.
 
-Please cite this paper if you use this code in an academic publication.
+Please cite our paper if you use any of the free material in this website:
 - Bibtex:
 @Article{DeepCASSI:SIGA:2017,<br>
   author  = {Inchang Choi and Daniel S. Jeon and Giljoo Nam <br>
