@@ -40,7 +40,7 @@ Alternatively, this file may be used under the terms of the GNU General Public L
 
 
 ## Requirements
-We developed the codes on **Ubuntu 14.04** and **Ubuntu 16.04**(which were explicitly tested) but believe that our codes could be executed on other platforms of Ubuntu, Windows, and OSX as well. When using different versions of Python and Tensorflow, minor modifications, such as function names, in the codes would be necessary.
+We developed the codes on **Ubuntu 14.04** and **Ubuntu 16.04** (which were explicitly tested) but believe that our codes could be executed on other platforms of Ubuntu, Windows, and OSX as well. When using different versions of Python and Tensorflow, minor modifications, such as function names, in the codes would be necessary.
 * ~~Python 2.7~~ -> Python 3.6
 * ~~Tensorflow [r0.12]~~ -> Tensorflow [1.10.0](https://www.tensorflow.org)
 * numpy
