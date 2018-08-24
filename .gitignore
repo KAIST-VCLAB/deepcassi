@@ -8,3 +8,9 @@ visualizer/__pycache__/
 assessment/__pycache__/
 
 autoencoder/__pycache__/
+
+\.idea/
+
+__pycache__/
+
+outputs/
