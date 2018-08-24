@@ -81,7 +81,7 @@ def demo_recon(SINGLE_CASSI=False,
     if SINGLE_CASSI:
         list_dispersion = np.floor(list_dispersion * 0.5)
         list_dispersion = list_dispersion.astype(dtype=np.int32)
-        print list_dispersion
+        print(list_dispersion)
 
     if SSCSI:
         mask3d = modulation.shift_random_mask(mask_2d, shift=0.1)
@@ -96,7 +96,7 @@ def demo_recon(SINGLE_CASSI=False,
     img_snapshot = np.squeeze(img_snapshot)
     cv2.imwrite(out_coded_img_filename, img_snapshot * 255 * 3)
     cv2.imshow('coded image', img_snapshot)
-    print 'Press any keys to continue!'
+    print('Press any keys to continue!')
     cv2.waitKey()
 
     #########################################################
@@ -124,8 +124,8 @@ def demo_recon(SINGLE_CASSI=False,
                                                 filename_model=trained_model_filename,
                                                 do_summarize=True,
                                                 summary_dir=summary_dir)
-    print x_recon.shape
-    print wvls2b
+    print(x_recon.shape)
+    print(wvls2b)
 
     cv2.waitKey()
 

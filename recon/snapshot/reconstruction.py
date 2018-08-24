@@ -77,7 +77,7 @@ def recon_snapshot(img_snapshot=[],
     # check if correct inputs are given
     #########################################################
     if img_snapshot == [] or img_mask == []:
-        print 'Not enough input images are given! Terminating....'
+        print('Not enough input images are given! Terminating....')
         exit()
 
     #########################################################
@@ -216,12 +216,12 @@ def recon_snapshot(img_snapshot=[],
             summary_writer.flush()
             step = 0
 
-            for i_admm in xrange(n_iters_ADMM):
-                print 'ADMM - iteration: %d' % (i_admm)
+            for i_admm in range(n_iters_ADMM):
+                print('ADMM - iteration: %d' % (i_admm))
                 start_time = datetime.now()
                 n_iters = n_iters_ADAM
 
-                for i_nonlinear in xrange(n_iters):
+                for i_nonlinear in range(n_iters):
                     if ENABLE_ALPHA_FIDELITY:
                         _, dual_encoder_code, \
                         l_total, l_data, l_admm, l_alpha_fidelity \
@@ -231,9 +231,9 @@ def recon_snapshot(img_snapshot=[],
                                                   mask3d_ph: mask3d_tf})
 
                         if i_nonlinear % 50 == 0:
-                            print 'iter: %d, total_loss: %6e, data_loss: %6e, admm_loss: %6e,' \
+                            print('iter: %d, total_loss: %6e, data_loss: %6e, admm_loss: %6e,' \
                                   ' alpha_loss: %6e,' \
-                                  % (i_nonlinear, l_total, l_data, l_admm, l_alpha_fidelity)
+                                  % (i_nonlinear, l_total, l_data, l_admm, l_alpha_fidelity))
 
                         if i_nonlinear == n_iters - 1:
                             # update xk (code)
@@ -252,11 +252,11 @@ def recon_snapshot(img_snapshot=[],
                                                   mask3d_ph: mask3d_tf})
 
                         if i_nonlinear % 50 == 0:
-                            print 'iter: %d, total_loss: %6e, data_loss: %6e, admm_loss: %6e, ' \
+                            print('iter: %d, total_loss: %6e, data_loss: %6e, admm_loss: %6e, ' \
                                   ' tv_loss_f: %6e, tv_recon_loss: %6e, tv_spec_loss: %6e, ' \
                                   'reg_mag_loss: %6e' \
                                   % (i_nonlinear, l_total, l_data, l_admm,
-                                     l_tv_f, l_tv_recon, l_tv_spec, l_reg_mag)
+                                     l_tv_f, l_tv_recon, l_tv_spec, l_reg_mag))
 
 
 
@@ -273,11 +273,11 @@ def recon_snapshot(img_snapshot=[],
                             #vis.visualize_sparse_code(code, rows=8, cols=8, title=GPU_ID + 'code_tf', scale=0.25)
                             #vis.visualize_sparse_code(code_encoder, rows=8, cols=8, title=GPU_ID + 'code_tf_encoder', scale=0.25)
 
-                            img_result_resize = cv2.resize(img_result[0], dsize=(img_w / 5, img_h / 5))
+                            img_result_resize = cv2.resize(img_result[0], dsize=(int(img_w / 5), int(img_h / 5)))
                             img_result_resize = np.expand_dims(img_result_resize, 0)
 
                             if gt_hs != []:
-                                data_resize = cv2.resize(data[0], dsize=(img_w / 5, img_h / 5))
+                                data_resize = cv2.resize(data[0], dsize=(int(img_w / 5), int(img_h / 5)))
                                 data_resize = np.expand_dims(data_resize, 0)
 
                                 vis.draw_the_comparison(img_result_resize, data_resize, title=GPU_ID + 'image recon comparison')
@@ -292,7 +292,7 @@ def recon_snapshot(img_snapshot=[],
                                 test_diff_sqr = np.square(img_result - data)
                                 test_diff_sqr_avg = np.average(test_diff_sqr)
                                 test_psnr = -10.0 * np.log10(test_diff_sqr_avg)
-                                print 'test_psnr: %.4f' % (test_psnr)
+                                print('test_psnr: %.4f' % (test_psnr))
                             else:
                                 temp_max = np.max(img_result_resize)
                                 temp_min = np.min(img_result_resize)
@@ -315,16 +315,16 @@ def recon_snapshot(img_snapshot=[],
                             img_prj_est_vis = vis.normalize_1ch(img_prj_est[0])
                             vis.imshow_with_zoom('estimated SSCSI', img_prj_est_vis, scale=1.0)
 
-                            img_result_resize = cv2.resize(img_result[0], dsize=(img_w / 5, img_h / 5))
+                            img_result_resize = cv2.resize(img_result[0], dsize=(int(img_w / 5), int(img_h / 5)))
                             img_result_resize = np.expand_dims(img_result_resize, 0)
                             if gt_hs != []:
-                                data_resize = cv2.resize(data[0], dsize=(img_w / 5, img_h / 5))
+                                data_resize = cv2.resize(data[0], dsize=(int(img_w / 5), int(img_h / 5)))
                                 data_resize = np.expand_dims(data_resize, 0)
                                 vis.draw_the_comparison(img_result_resize, data_resize, title='image recon comparison')
                                 test_diff_sqr = np.square(img_result - data)
                                 test_diff_sqr_avg = np.average(test_diff_sqr)
                                 test_psnr = -10.0 * np.log10(test_diff_sqr_avg)
-                                print 'test_psnr: %.4f' % (test_psnr)
+                                print('test_psnr: %.4f' % (test_psnr))
                             else:
                                 temp_max = np.max(img_result_resize)
                                 temp_min = np.min(img_result_resize)
@@ -368,7 +368,7 @@ def recon_snapshot(img_snapshot=[],
 
                 end_time = datetime.now()
                 elapsed_time = end_time - start_time
-                print 'elapsed time for 1 ADMM iteration: ' + str(elapsed_time)
+                print('elapsed time for 1 ADMM iteration: ' + str(elapsed_time))
 
     cv2.waitKey(5000)
 

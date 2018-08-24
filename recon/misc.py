@@ -56,10 +56,10 @@ def np_del_operator(xk):
 
 def soft_threshold(v, l, r):
     threshold_val = l/r
-    print 'before: '
-    print threshold_val
-    print np.max(v)
-    print np.min(v)
+    print('before: ')
+    print(threshold_val)
+    print(np.max(v))
+    print(np.min(v))
     # print v.shape
     vshape = v.shape
     v = v.flatten()
@@ -80,7 +80,7 @@ def soft_threshold(v, l, r):
     v = np.reshape(v, newshape=vshape)
 
     #print threshold_val
-    print 'after: '
-    print np.max(v)
-    print np.min(v)
+    print('after: ')
+    print(np.max(v))
+    print(np.min(v))
     return v

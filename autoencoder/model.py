@@ -57,22 +57,22 @@ def build_convoultiona_ae(list_n_features_encoder=default_n_features_encoder,
     # Check dimensions
     #########################################################
     if list_n_features_encoder[-1] != list_n_features_decoder[0]:
-        print 'The output side of the encoder' \
-              ' and the input size of decoder do not match'
+        print('The output side of the encoder' \
+              ' and the input size of decoder do not match')
         exit()
     if list_n_features_encoder[0] != list_n_features_decoder[-1]:
-        print 'The input side of the encoder' \
-              ' and the output size of decoder do not match'
+        print('The input side of the encoder' \
+              ' and the output size of decoder do not match')
         exit()
 
     if (list_n_features_encoder[0] != params.N_VALID_SPECTRALS)\
             or(list_n_features_decoder[-1] != params.N_VALID_SPECTRALS):
-        print 'The input and the output sizes do not match with the n_channels'
+        print('The input and the output sizes do not match with the n_channels')
         exit()
 
     if (len(list_n_features_encoder) != len(list_layer_type_encoder) + 1) \
             or (len(list_n_features_decoder) != len(list_layer_type_decoder) + 1):
-        print 'The input and the output sizes do not match with the n_channels'
+        print('The input and the output sizes do not match with the n_channels')
         exit()
 
     n_convs_encoder = len(list_layer_type_encoder)
@@ -94,7 +94,7 @@ def build_convoultiona_ae(list_n_features_encoder=default_n_features_encoder,
     #########################################################
     layer_name_base = 'encoder'
     response = x_data_node
-    for l in xrange(n_convs_encoder):
+    for l in range(n_convs_encoder):
         l_type = list_layer_type_encoder[l]
         layer_name = layer_name_base + '-conv' + str(l)
 
@@ -130,7 +130,7 @@ def build_convoultiona_ae(list_n_features_encoder=default_n_features_encoder,
                 else:
                     response = tf.nn.relu(response)
         else:
-            print 'A wrong layer type for the encoder'
+            print('A wrong layer type for the encoder')
             exit()
 
         if l == (n_convs_encoder - 1):
@@ -142,7 +142,7 @@ def build_convoultiona_ae(list_n_features_encoder=default_n_features_encoder,
     #########################################################
     layer_name_base = 'decoder'
 
-    for l in xrange(n_convs_decoder):
+    for l in range(n_convs_decoder):
         l_type = list_layer_type_decoder[l]
         layer_name = layer_name_base + '-conv' + str(l)
 
@@ -173,7 +173,7 @@ def build_convoultiona_ae(list_n_features_encoder=default_n_features_encoder,
                 if with_wd:
                     conv_weight_list.append(conv_weight)
         else:
-            print 'A wrong layer type for the decoder'
+            print('A wrong layer type for the decoder')
             exit()
 
     x_data_predicted_node = response

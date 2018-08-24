@@ -63,7 +63,7 @@ def infer_ae(data,
     #########################################################
     with tf.Session(config=tf.ConfigProto(log_device_placement=False)) as sess:
         saver.restore(sess, filename_model)
-        print "Model restored from file: %s" % filename_model
+        print("Model restored from file: %s" % filename_model)
 
         feed_dict = {x_data_node: data}
         recon, code\
