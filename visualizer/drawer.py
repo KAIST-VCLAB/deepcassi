@@ -73,7 +73,7 @@ def visualize_sparse_code(code, rows=16, cols=16, padding=5, title='code', scale
     vis_w = (padding + fmap_w) * cols + padding
     img_vis = np.zeros(shape=(vis_h, vis_w), dtype=np.float32)
 
-    for c in xrange(fmap_chs):
+    for c in range(fmap_chs):
         code_ic = code[:, :, :, c]
         max_val = np.max(code_ic)
         min_val = np.min(code_ic)
@@ -109,7 +109,7 @@ def draw_the_comparison(img, img_gt=[],
         shape_gt = img_gt.shape
         # check if they are the same
         if shape_gt != shape_img:
-            print 'the size of the two HS images are different'
+            print('the size of the two HS images are different')
             return
 
     # determined the size
@@ -132,7 +132,7 @@ def draw_the_comparison(img, img_gt=[],
         ratio = 1.0
     ratio = 1.0
 
-    for c in xrange(chs):
+    for c in range(chs):
         img_c = img[:, :, :, c]*ratio
         # set position
         idx_v = c / cols
@@ -141,8 +141,8 @@ def draw_the_comparison(img, img_gt=[],
         if img_gt != []:
             gt_c = img_gt[:, :, :, c]
             # the position for GT
-            pos_gt_y = padding_row + (padding_row + h + padding_row + h) * idx_v
-            pos_gt_x = padding_col + (padding_col + w) * idx_h
+            pos_gt_y = int(padding_row + (padding_row + h + padding_row + h) * idx_v)
+            pos_gt_x = int(padding_col + (padding_col + w) * idx_h)
             # draw gt
             img_vis[pos_gt_y:(pos_gt_y + h), pos_gt_x:(pos_gt_x + w)] \
                 = gt_c

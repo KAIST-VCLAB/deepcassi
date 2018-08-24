@@ -79,7 +79,7 @@ def test_infer_single(in_filename, out_filename_gt, out_filename,
     #########################################################
     # show
     #########################################################
-    for i in xrange(n_samples):
+    for i in range(n_samples):
         gt_i = data[i]
         recon_i = recon[i]
         code_i = code[i]
@@ -87,7 +87,7 @@ def test_infer_single(in_filename, out_filename_gt, out_filename,
         # visualize the feature map
         vis.visualize_sparse_code(code, rows=8, cols=8, title='nonlinear representation', scale=0.25)
         cv2.waitKey()
-        print 'Press any keys to continue'
+        print('Press any keys to continue')
 
         # compare gt and recon
         img_h, img_w, img_chs = gt_i.shape
@@ -99,7 +99,7 @@ def test_infer_single(in_filename, out_filename_gt, out_filename,
         vis.draw_the_comparison(recon_i_resize, gt_i_resize, title='image inferred comparison',
                                 compute_psnr=True)
         cv2.waitKey()
-        print 'Press any keys to continue'
+        print('Press any keys to continue')
 
     #########################################################
     # save
