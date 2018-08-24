@@ -82,7 +82,7 @@ def build_recon_network(list_n_features_decoder=[],
     layer_name_base = 'decoder'
     response = xk
 
-    for l in xrange(n_convs_decoder):
+    for l in range(n_convs_decoder):
         layer_name = layer_name_base + '-conv' + str(l)
 
         list_stride = [1, 1, 1, 1]
@@ -102,7 +102,7 @@ def build_recon_network(list_n_features_decoder=[],
     img_recon = tf.identity(response, name='img_recon')
 
     # apply coded mask
-    img_masked = tf.mul(img_recon, mask3d, name='masking')
+    img_masked = tf.multiply(img_recon, mask3d, name='masking')
     # projection to 2D
     img_prj = tf.reduce_sum(img_masked, 3)
     # normlaize
@@ -117,7 +117,7 @@ def build_recon_network(list_n_features_decoder=[],
     G_xk_horizontal = img_recon[:, :, 1:, :] - img_recon[:, :, :-1, :]
     G_xk_vertical = G_xk_vertical[:, :, :-1, :]
     G_xk_horizontal = G_xk_horizontal[:, :-1, : :]
-    G_xk = tf.pack([G_xk_vertical, G_xk_horizontal], axis=4)
+    G_xk = tf.stack([G_xk_vertical, G_xk_horizontal], axis=4)
     #G_xk = tf.square(G_xk_vertical) + tf.square(G_xk_horizontal)
     diff = G_xk - zk + uk
     #diff = xk - zk + uk
@@ -240,7 +240,7 @@ def build_recon_network_dual(list_n_features_encoder=[],
     layer_name_base = 'decoder'
     response = xk
 
-    for l in xrange(n_convs_decoder):
+    for l in range(n_convs_decoder):
         layer_name = layer_name_base + '-conv' + str(l)
 
         list_stride = [1, 1, 1, 1]
@@ -259,17 +259,17 @@ def build_recon_network_dual(list_n_features_encoder=[],
     # img_recon = response
     img_recon = tf.identity(response, name='img_recon')
     # apply coded mask
-    img_masked = tf.mul(img_recon, mask3d, name='masking')
+    img_masked = tf.multiply(img_recon, mask3d, name='masking')
     if SINGLE_CASSI:
         list_chs = []
-        for ch in xrange(img_chs):
+        for ch in range(img_chs):
             shift_val = list_shift[ch]
             img_masked_ch = img_masked[:, :, :, ch]
             tensor_left = img_masked_ch[:, :, (img_w - shift_val):]
             tensor_right = img_masked_ch[:, :, 0:(img_w - shift_val)]
             tensor_concat = tf.concat(2, [tensor_left, tensor_right])
             list_chs.append(tensor_concat)
-        img_masked = tf.pack(list_chs, axis=3)
+        img_masked = tf.stack(list_chs, axis=3)
 
 
     # projection to 2D
@@ -283,7 +283,7 @@ def build_recon_network_dual(list_n_features_encoder=[],
     #########################################################
     layer_name_base = 'encoder'
     response = img_recon
-    for l in xrange(n_convs_encoder):
+    for l in range(n_convs_encoder):
         layer_name = layer_name_base + '-conv' + str(l)
         list_stride = [1, 1, 1, 1]
         pad = 'SAME'
@@ -320,7 +320,7 @@ def build_recon_network_dual(list_n_features_encoder=[],
     G_xk_horizontal = img_recon[:, :, 1:, :] - img_recon[:, :, :-1, :]
     G_xk_vertical = G_xk_vertical[:, :, :-1, :]
     G_xk_horizontal = G_xk_horizontal[:, :-1, ::]
-    G_xk = tf.pack([G_xk_vertical, G_xk_horizontal], axis=4)
+    G_xk = tf.stack([G_xk_vertical, G_xk_horizontal], axis=4)
     # G_xk = tf.square(G_xk_vertical) + tf.square(G_xk_horizontal)
     diff = G_xk - zk + uk
     # diff = xk - zk + uk

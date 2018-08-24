@@ -56,7 +56,7 @@ def build_encoder_ae(list_n_features_encoder=[],
     #########################################################
     layer_name_base = 'encoder'
     response = x_data_node
-    for l in xrange(n_convs_encoder):
+    for l in range(n_convs_encoder):
         layer_name = layer_name_base + '-conv' + str(l)
         list_stride = [1, 1, 1, 1]
         pad = 'SAME'
@@ -102,7 +102,7 @@ def build_decoder_ae(list_n_features_decoder=[],
     layer_name_base = 'decoder'
     response = sparse_code_alpha
 
-    for l in xrange(n_convs_decoder):
+    for l in range(n_convs_decoder):
         layer_name = layer_name_base + '-conv' + str(l)
 
         list_stride = [1, 1, 1, 1]

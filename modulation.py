@@ -61,9 +61,9 @@ def shift_random_mask(mask, chs=31, shift=0.1):
 
     shifted_mask = np.zeros(shape=(h, w, chs), dtype=mask.dtype)
 
-    for j in xrange(h):
-        for i in xrange(w):
-            for ch in xrange(chs):
+    for j in range(h):
+        for i in range(w):
+            for ch in range(chs):
                 m = int(round((1 - shift) * i + shift * ch))
                 if m > w:
                     m = m - w
@@ -72,7 +72,7 @@ def shift_random_mask(mask, chs=31, shift=0.1):
 
                 shifted_mask[j, i, ch] = mask[j, m]
 
-    # for ch in xrange(chs):
+    # for ch in range(chs):
     #     vis.imshow_with_zoom(wname='shifted mask', img=shifted_mask[:,:,ch]*255,
     #                          scale=1.0, interpolation=cv2.INTER_NEAREST)
     #     cv2.waitKey()
@@ -83,7 +83,7 @@ def shift_random_mask_for_real(mask, chs=31, shift_list=[]):
     shifted_mask = np.zeros(shape=(h, w, chs), dtype=mask.dtype)
 
     # disperse the coded mask
-    for ch in xrange(chs):
+    for ch in range(chs):
         # for ch in params.VALID_SPECTRAL_CHS:
         shift_val = shift_list[ch]
         M = np.float32([[1, 0, shift_val], [0, 1, 0]])
@@ -104,7 +104,7 @@ def generate_shifted_mask_cube(mask, chs=31,
     shifted_mask = np.zeros(shape=(h, w, chs), dtype=mask.dtype)
 
     # disperse the coded mask
-    for ch in xrange(chs):
+    for ch in range(chs):
         # for ch in params.VALID_SPECTRAL_CHS:
         if SINGLE_CASSI:
             img_coded_mask_shifted = mask
@@ -126,7 +126,7 @@ def generate_coded_image(img_hs, mask, chs=31, SINGLE_CASSI=False, shift_list=sh
         # do channel-wise shift
         h, w,_ = mask.shape
         img_masked_shifted = np.zeros(shape=(h, w, chs), dtype=mask.dtype)
-        for ch in xrange(chs):
+        for ch in range(chs):
             shift_val = shift_list[ch]
             img_shifted = np.roll(img_masked[:,:,ch], shift=shift_val, axis=1)
             img_masked_shifted[:, :, ch] = img_shifted
