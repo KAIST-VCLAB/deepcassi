@@ -135,14 +135,15 @@ def draw_the_comparison(img, img_gt=[],
     for c in range(chs):
         img_c = img[:, :, :, c]*ratio
         # set position
-        idx_v = c / cols
-        idx_h = c % cols
+        idx_v = int(c / cols)
+        idx_h = int(c % cols)
 
         if img_gt != []:
             gt_c = img_gt[:, :, :, c]
             # the position for GT
-            pos_gt_y = int(padding_row + (padding_row + h + padding_row + h) * idx_v)
-            pos_gt_x = int(padding_col + (padding_col + w) * idx_h)
+            # pos_gt_y = int(padding_row + (padding_row + h + padding_row + h) * idx_v)
+            pos_gt_y = padding_row + (padding_row + h + padding_row + h) * idx_v
+            pos_gt_x = padding_col + (padding_col + w) * idx_h
             # draw gt
             img_vis[pos_gt_y:(pos_gt_y + h), pos_gt_x:(pos_gt_x + w)] \
                 = gt_c
